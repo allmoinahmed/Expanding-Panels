@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 *{
     box-sizing: border-box;
 }
 body {
-    font-family: 'Muli',sans-serif;
+    font-family: 'Rubik', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,6 +31,7 @@ body {
     transition: flex 0.5s ease-in;
     background-color: #fff;
     border-left: 01px #000 dashed;
+    padding: 40px 57px;
 }
 
 .panel h3 {
@@ -47,6 +48,8 @@ body {
     align-items: center;
     justify-content: center;
     display: flex;
+    position: relative;
+    z-index: 99;
 }
 
 .panel #panel-next img {
@@ -58,19 +61,22 @@ body {
     background-color: #F97991;
 }
 
+
+/* Panel Five BG */
 .panel #person-bg {
     width: 356px;
     height: 484px;
     float: left;
     position: absolute;
     bottom: 108px;
-    left: -43px;
-    display: none
+    left: -43px;    
+    /* display: none; */
+    opacity: 0;
 }
-.panel #person-bg img,
-#fourPanel #person-bg img {
-    width: 100%;
+.panel #person-bg img {
+    width: 100%;    
 }
+/* Panel Four BG */
 
 #fourPanel #person-bg {
     width: 1175px;
@@ -79,8 +85,100 @@ body {
     position: absolute;
     bottom: 1px;
     left: -76px;
-    display: none;
+    opacity: 0;
 }
+/* Panel Three BG */
+
+#threePanel #person-bg {
+    width: 555px;
+    height: 654px;
+    float: left;
+    position: absolute;
+    bottom: 1px;
+    left: -50px;
+    opacity: 0;
+}
+
+/* Panel Two BG */
+#twoPanel #person-bg {
+    width: 407px;
+    height: 428px;
+    float: left;
+    position: absolute;
+    bottom: 1px;
+    left: 25px;
+    opacity: 0;
+}
+
+/* Panel active BG */
+.panel.active #person-bg,
+#fourPanel.active #person-bg,
+#threePanel.active #person-bg,
+#twoPanel.active #person-bg {    
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+
+/* Content Styling */
+#panel-top-part {
+    width: 100%;
+    display:none;
+}
+#panel-top-part #secOne{
+
+text-align: right;
+}
+#panel-top-part #secOne span {
+
+font-size: 20px;
+
+line-height: 36px;
+}
+#panel-top-part #secTitle {
+    height: 90px;
+    color: #FFFFFF;
+    font-size: 80px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 90px;
+    text-align: right;
+}
+#panel-top-part #secDesc {
+    height: 108px;
+    width: 665px;
+    color: #FFFFFF;
+    font-family: Rubik;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 36px;
+    text-align: right;
+    float: right;
+}
+#panel-top-part #secBtn {
+    display: block;
+    clear: both;
+    width: 100%;
+    float: right;
+    text-align: right;
+    margin-top: 40px;
+}
+#panel-top-part #secBtn button {
+    color: #3A68F5;
+    font-family: Rubik;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 28px;
+    text-align: center;
+    height: 64px;
+    width: 269px;
+    border-radius: 32px;
+    background-color: #FFFFFF;
+    box-shadow: -8px 8px 16px 0 rgba(15,48,89,0.2);
+    border: none;
+}
+
 
 .panel.active {
     flex:3.10;
@@ -88,6 +186,10 @@ body {
     border: none
 }
 
+.panel.active #panel-top-part {
+    display: block;
+    transition: all 0.3s ease-in 0.4s;
+}
 
 .panel.active h3 {
     opacity: 1;
@@ -98,11 +200,9 @@ body {
     display: none
 }
 
-.panel.active #person-bg,
-#fourPanel.active #person-bg  {
-    display: block;
-    transition: display 0.3s ease-in 0.4s;
-}
+
+
+
 
 @media (max-width:480px){
     .container{
